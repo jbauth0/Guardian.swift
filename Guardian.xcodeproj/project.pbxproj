@@ -34,6 +34,7 @@
 		23D3E4401D91BEA200F3FDE2 /* Base32Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D3E43F1D91BEA200F3FDE2 /* Base32Spec.swift */; };
 		23FE50831D949EC400407A1D /* Guardian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2037CD1D5E1E3E0005D2E2 /* Guardian.framework */; };
 		23FE50841D949EC400407A1D /* Guardian.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2037CD1D5E1E3E0005D2E2 /* Guardian.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E2AE5AC24390F0000DCE64B /* Guardian-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2AE5AB24390F0000DCE64B /* Guardian-Swift.h */; };
 		5F07A58521092C7D00819FA2 /* ClientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07A58421092C7D00819FA2 /* ClientInfo.swift */; };
 		5F07A58721092F2300819FA2 /* ClientInfoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07A58621092F2300819FA2 /* ClientInfoSpec.swift */; };
 		5F07A589210A57C200819FA2 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07A588210A57C200819FA2 /* Events.swift */; };
@@ -180,6 +181,8 @@
 		23C67AEB1D81D6A400A38A2E /* MockNSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNSURLSession.swift; sourceTree = "<group>"; };
 		23C67AED1D81EF5300A38A2E /* EnrolledDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrolledDevice.swift; sourceTree = "<group>"; };
 		23D3E43F1D91BEA200F3FDE2 /* Base32Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base32Spec.swift; sourceTree = "<group>"; };
+		4E2AE5A624390B4700DCE64B /* Guardian-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Guardian-Bridging-Header.h"; sourceTree = "<group>"; };
+		4E2AE5AB24390F0000DCE64B /* Guardian-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Guardian-Swift.h"; sourceTree = "<group>"; };
 		5F07A58421092C7D00819FA2 /* ClientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfo.swift; sourceTree = "<group>"; };
 		5F07A58621092F2300819FA2 /* ClientInfoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfoSpec.swift; sourceTree = "<group>"; };
 		5F07A588210A57C200819FA2 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -473,6 +476,8 @@
 				5F2037D01D5E1E3E0005D2E2 /* Guardian.h */,
 				5F2037D21D5E1E3E0005D2E2 /* Info.plist */,
 				237246741D7DC63B00CCF635 /* Guardian.swift */,
+				4E2AE5A624390B4700DCE64B /* Guardian-Bridging-Header.h */,
+				4E2AE5AB24390F0000DCE64B /* Guardian-Swift.h */,
 			);
 			path = Guardian;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2AE5AC24390F0000DCE64B /* Guardian-Swift.h in Headers */,
 				5F2037D11D5E1E3E0005D2E2 /* Guardian.h in Headers */,
 				23B7A0491DD4E8300038124A /* A0RSA.h in Headers */,
 				231687171DDA071A00B09526 /* A0SHA.h in Headers */,
@@ -925,6 +931,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -977,6 +984,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1002,7 +1010,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.auth0.sdk.Guardian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1025,7 +1033,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.auth0.sdk.Guardian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

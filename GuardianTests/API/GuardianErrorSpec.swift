@@ -106,6 +106,18 @@ class GuardianErrorSpec: QuickSpec {
                 """.data(using: .utf8)!
                 expect(((try? decoder.decode(GuardianError.self, from: minimalJSON).info["field"] as? Int) as Int??)).to(equal(randomValue))
             }
+            
+            it("should load extra float field") {
+                let code = UUID().uuidString
+                let randomValue = Float(arc4random()) / 0xFFFFFFFF
+                let minimalJSON = """
+                {
+                    "errorCode": "\(code)",
+                    "field": \(randomValue)
+                }
+                """.data(using: .utf8)!
+                expect(((try? decoder.decode(GuardianError.self, from: minimalJSON).info["field"] as? Float) as Float??)).to(equal(randomValue))
+            }
 
             it("should load extra double field") {
                 let code = UUID().uuidString
